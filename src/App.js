@@ -1,7 +1,17 @@
-import CategoryDirectory from "./components/category-directory/category-directory.jsx";
+import { Routes, Route } from "react-router-dom";
+import Home from "../src/routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import SignIn from "./routes/signin/signin.component";
 
 const App = () => {
-  return <CategoryDirectory />;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="sign-in" element={<SignIn />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
